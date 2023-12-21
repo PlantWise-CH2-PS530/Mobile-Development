@@ -21,10 +21,13 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.238" />
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/editProfileImageIcon"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        app:civ_border_width="1dp"
+        app:civ_border_color="@color/black"
+        app:civ_circle_background_color="@color/white"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:src="@drawable/ic_edit_image"
@@ -36,21 +39,24 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textSize="22sp"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:text="@string/username"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:hint="@string/username"
         app:layout_constraintTop_toBottomOf="@+id/imageProfile"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/editNameIcon"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="35dp"
         android:src="@drawable/ic_edit_username"
+        app:civ_border_width="1dp"
+        app:civ_border_color="@color/black"
+        app:civ_circle_background_color="@color/white"
         app:layout_constraintEnd_toEndOf="@id/textUsername"
         app:layout_constraintTop_toBottomOf="@id/imageProfile" />
 
