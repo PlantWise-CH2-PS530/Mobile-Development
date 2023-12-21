@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.detailplant.DetailPlantFragment">
+
+    <TextView
+        android:id="@+id/tv_title_plant"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/plant_title"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_image_plant" />
+
+    <ImageView
+        android:id="@+id/iv_image_plant"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        tools:src="@tools:sample/backgrounds/scenic"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_plant"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/plant_title" />
+
+    <GridLayout
+        android:id="@+id/grid_plant"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:columnCount="2"
+        android:rowCount="4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_image_plant"
+        app:layout_constraintWidth_percent="0.8">
+
+        <TextView
+            android:id="@+id/textViewDifficultyTitle"
+            android:layout_gravity="center|start"
+            android:text="Difficulty" />
+
+        <TextView
+            android:id="@+id/textViewSizeTitle"
+            android:layout_gravity="center|end"
+            android:text="Size" />
+
+        <TextView
+            android:id="@+id/textViewDifficultyValue"
+            android:layout_gravity="center|start"
+            android:text="Mudah" />
+
+        <TextView
+            android:id="@+id/textViewSizeValue"
+            android:layout_gravity="center|end"
+            android:text="Kecil" />
+
+        <TextView
+            android:id="@+id/textViewWaterTitle"
+            android:layout_gravity="center|start"
+            android:text="Water" />
+
+        <TextView
+            android:id="@+id/textViewTypeTitle"
+            android:layout_gravity="center|end"
+            android:text="Type" />
+
+        <TextView
+            android:id="@+id/textViewWaterValue"
+            android:layout_gravity="center|start"
+            android:text="Banyak" />
+
+        <TextView
+            android:id="@+id/textViewTypeValue"
+            android:layout_gravity="center|end"
+            android:text="Indoor" />
+
+    </GridLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_saved_plant"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginVertical="20dp"
+        app:layout_constraintTop_toBottomOf="@id/grid_plant"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
