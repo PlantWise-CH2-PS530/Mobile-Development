@@ -9,7 +9,6 @@ class ProfileRepository(private val profileDao: ProfileDao) {
     suspend fun getProfileSuspend(): Profile? {
         return profileDao.getProfile()
     }
-    //apalah ini
 
     fun getProfile(): LiveData<Profile?> {
         return profileDao.getProfileLiveData()
