@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
@@ -37,10 +38,6 @@ class DetailNewsFragment : Fragment() {
         detailNewsFragmentViewModel.detailNews.observe(viewLifecycleOwner) {
             setData(it)
         }
-
-//        detailNewsFragmentViewModel.isLoading.observe(viewLifecycleOwner) {
-//            showLoading(it)
-//        }
     }
 
     private fun setData(data: DataItem) {
@@ -55,14 +52,6 @@ class DetailNewsFragment : Fragment() {
 
     companion object {
         const val extraData = "EXTRA_ID"
-
-        fun newInstance(newsId: Int): DetailNewsFragment {
-            val fragment = DetailNewsFragment()
-            val args = Bundle()
-            args.putInt(extraData, newsId)
-            fragment.arguments = args
-            return fragment
-        }
     }
 
     override fun onDestroyView() {

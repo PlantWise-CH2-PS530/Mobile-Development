@@ -15,9 +15,6 @@ import retrofit2.Response
 
 class NewsViewModel : ViewModel() {
 
-//    private val _news = MutableLiveData<List<DataItem>>()
-//    val news: LiveData<List<DataItem>> = _news
-
     private val _hottestNews = MutableLiveData<List<DataItem>>()
     val hottestNews: LiveData<List<DataItem>> = _hottestNews
 
@@ -78,60 +75,6 @@ class NewsViewModel : ViewModel() {
             }
         })
     }
-
-//     fun findHottest() {
-//        _isLoading.value = true
-//        val client = ApiConfig.getApiService().getHottestNews()
-//        client.enqueue(object : Callback<NewsResponse> {
-//            override fun onResponse(
-//                call: Call<NewsResponse>,
-//                response: Response<NewsResponse>
-//            ) {
-//                _isLoading.value = false
-//                if (response.isSuccessful) {
-//                    val responseBody = response.body()
-//                    if (responseBody != null) {
-//                        _news.value = responseBody.data
-//                        Log.d("Berhasil", response.body().toString())
-//                    }
-//                } else {
-//                    _isLoading.value = false
-//                    Log.e(TAG, "onFailure: ${response.message()}")
-//                }
-//            }
-//
-//            override fun onFailure(call: Call<NewsResponse>, t: Throwable) {
-//                _isLoading.value = false
-//                Log.e(TAG, "onFailure: ${t.message.toString()}")
-//            }
-//        })
-//    }
-//
-//     fun findRecent() {
-//        _isLoading.value = true
-//        val client = ApiConfig.getApiService().getRecentNews()
-//        client.enqueue(object : Callback<NewsResponse> {
-//            override fun onResponse(
-//                call: Call<NewsResponse>,
-//                response: Response<NewsResponse>
-//            ) {
-//                _isLoading.value = false
-//                if (response.isSuccessful) {
-//                    val responseBody = response.body()
-//                    if (responseBody != null) {
-//                        _news.value = responseBody.data
-//                    }
-//                } else {
-//                    Log.e(TAG, "onFailure: ${response.message()}")
-//                }
-//            }
-//
-//            override fun onFailure(call: Call<NewsResponse>, t: Throwable) {
-//                _isLoading.value = false
-//                Log.e(TAG, "onFailure: ${t.message.toString()}")
-//            }
-//        })
-//    }
 
     companion object {
         private const val TAG = "MainActivity"
