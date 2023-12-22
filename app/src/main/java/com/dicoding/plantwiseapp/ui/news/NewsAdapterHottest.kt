@@ -29,11 +29,13 @@ class NewsAdapterHottest: ListAdapter<DataItem, NewsAdapterHottest.MyViewHolder>
         }
     }
 
-    class MyViewHolder(private val binding: ItemNewsHottestBinding) : RecyclerView.ViewHolder(binding.root) {
+    class MyViewHolder(
+        private val binding: ItemNewsHottestBinding
+    ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(user: DataItem) {
             Glide.with(binding.root.context)
                 .load(user.imageUrl)
-                .into(binding.ivNewsItem2)
+                .into(binding.ivNewsItemHottest)
             binding.tvTitleItem2.text = user.tittle
         }
     }

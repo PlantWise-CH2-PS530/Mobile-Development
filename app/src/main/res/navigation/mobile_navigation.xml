@@ -13,6 +13,12 @@
         <action
             android:id="@+id/action_navigation_home_to_mapsFragment"
             app:destination="@id/mapsFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_detailPlantFragment"
+            app:destination="@id/detailPlantFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_mapsFragment1"
+            app:destination="@id/mapsFragment1" />
     </fragment>
 
     <fragment
@@ -49,4 +55,8 @@
         android:name="com.dicoding.plantwiseapp.ui.detailplant.DetailPlantFragment"
         android:label="fragment_detail_plant"
         tools:layout="@layout/fragment_detail_plant" />
+    <fragment
+        android:id="@+id/mapsFragment1"
+        android:name="com.dicoding.plantwiseapp.ui.maps.MapsFragment1"
+        android:label="MapsFragment1" />
 </navigation>

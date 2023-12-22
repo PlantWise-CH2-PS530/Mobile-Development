@@ -15,7 +15,7 @@ import com.dicoding.plantwiseapp.databinding.FragmentNewsBinding
 
 class NewsFragment : Fragment() {
 
-    private lateinit var binding: FragmentNewsBinding
+    private var binding: FragmentNewsBinding? = null
     private val viewModel: NewsViewModel by viewModels()
 
     companion object {
@@ -27,7 +27,7 @@ class NewsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentNewsBinding.inflate(inflater, container, false)
-        return binding.root
+        return binding!!.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -35,7 +35,7 @@ class NewsFragment : Fragment() {
 
         activity?.let {
             val layoutManager = LinearLayoutManager(it, LinearLayoutManager.HORIZONTAL, false)
-            binding.rvHottestNews.layoutManager = layoutManager
+            binding!!.rvHottestNews.layoutManager = layoutManager
 
             viewModel.hottestNews.observe(viewLifecycleOwner) { news ->
                 if(news.isNotEmpty()){
@@ -45,7 +45,7 @@ class NewsFragment : Fragment() {
             viewModel.findHottest()
 
             val layoutManager2 = LinearLayoutManager(it, LinearLayoutManager.VERTICAL, false)
-            binding.rvRecentNews.layoutManager = layoutManager2
+            binding!!.rvRecentNews.layoutManager = layoutManager2
 
             viewModel.recentNews.observe(viewLifecycleOwner) { news ->
                 if (news.isNotEmpty()) {
@@ -53,21 +53,6 @@ class NewsFragment : Fragment() {
                 }
             }
             viewModel.findRecent()
-//            viewModel.news.observe(viewLifecycleOwner) { news ->
-//                if(news.isNotEmpty()){
-//                    setDataNews(news)
-//                }
-//            }
-//            viewModel.isLoading.observe(viewLifecycleOwner) { isLoading ->
-//                if (!isLoading) {
-//                    viewModel.news.observe(viewLifecycleOwner) { recentNews ->
-//                        if (recentNews.isNotEmpty()) {
-//                            setDataNews(recentNews)
-//                        }
-//                    }
-//                    viewModel.findRecent()
-//                }
-//            }
         }
     }
 
@@ -75,7 +60,7 @@ class NewsFragment : Fragment() {
         Log.d("NewsFragment", "setDataNews2 called with ${newsList.size} items")
         val adapter = NewsAdapterHottest()
         adapter.submitList(newsList)
-        binding.rvHottestNews.adapter = adapter
+        binding!!.rvHottestNews.adapter = adapter
 
         adapter.setOnItemClickCallback(object : NewsAdapterHottest.OnItemClickCallback{
             override fun onItemClicked(data: DataItem) {
@@ -92,7 +77,7 @@ class NewsFragment : Fragment() {
         Log.d("NewsFragment", "setDataNews called with ${newsList.size} items")
         val adapter = NewsAdapterRecent()
         adapter.submitList(newsList)
-        binding.rvRecentNews.adapter = adapter
+        binding!!.rvRecentNews.adapter = adapter
 
         adapter.setOnItemClickCallBack(object : NewsAdapterRecent.OnItemClickCallback{
             override fun onItemClicked(data: DataItem) {

@@ -8,6 +8,7 @@ object Injection {
     fun provideRepository(context: Context): ProfileRepository {
         val database = ProfileRoomDatabase.getDatabase(context)
         val dao = database.profileDao()
-        return ProfileRepository.getInstance(dao)
+        val cont = context.applicationContext
+        return ProfileRepository.getInstance(dao, cont)
     }
 }

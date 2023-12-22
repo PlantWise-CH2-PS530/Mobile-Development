@@ -7,14 +7,13 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import com.dicoding.plantwiseapp.R
 import com.dicoding.plantwiseapp.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -32,7 +31,12 @@ class HomeFragment : Fragment() {
         homeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
+        binding.button.setOnClickListener { onButtonClick() }
         return root
+    }
+
+    private fun onButtonClick(){
+        findNavController().navigate(R.id.action_navigation_home_to_mapsFragment1)
     }
 
     override fun onDestroyView() {

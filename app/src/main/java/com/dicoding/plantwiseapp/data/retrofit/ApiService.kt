@@ -15,9 +15,6 @@ interface ApiService {
     @GET("users/{username}/followers")
     fun getFollowers(@Path("username") username: String): Call<GithubResponse>
 
-    @GET("news")
-    fun getAllNews(@Path("id") id : String): Call<NewsResponse>
-
     @GET("news/{NewsId}")
     fun getDetailNewsById(@Path("id") id : String): Call<NewsResponse>
 

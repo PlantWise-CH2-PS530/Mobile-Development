@@ -44,9 +44,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
         viewModel.getProfile().observe(viewLifecycleOwner) { profile ->
             profile?.let {
-//                val editableUsername = Editable.Factory.getInstance().newEditable(it.username)
                 textUsername.text = it.username
-
                 Glide.with(requireContext()).load(it.avatarUrl).into(imageProfile)
             }
         }
@@ -56,14 +54,15 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         }
 
         editNameIcon.setOnClickListener {
-            showEditUsernameDialog()
+            showEditUsernameDialog(viewModel.getUsernameFromPrefs())
         }
         return view
     }
 
-    private fun showEditUsernameDialog() {
+    private fun showEditUsernameDialog(savedUsername: String) {
         val builder = AlertDialog.Builder(requireContext())
         val editText = EditText(requireContext())
+        editText.setText(savedUsername)
         builder.setTitle("Edit Username")
             .setView(editText)
             .setPositiveButton("Save") { _, _ ->

@@ -11,7 +11,11 @@
     <string name="text_home">Home</string>
 
     <string name="searchbar_hint">Masukkan nama tanaman</string>
-    <string name="desc_app">Aplikasi ini ditujukkan untuk blavlavla</string>
+    <string name="desc_app">PlantWise adalah aplikasi yang membantu pengguna dengan memberikan rekomendasi tanaman yang cocok untuk ditanam. Anda hanya perlu memasukkan lokasi tempat Anda ingin menanam dan aplikasi ini akan memilih tanaman apa yang bisa ditanam!</string>
+    <string name="button_map">Go</string>
+    <string name="card_map">Masukkan lokasi?</string>
+    <string name="desc_image_map">Map</string>
+    <string name="saved_plant">Tanaman yang tersimpan</string>
 
     <string name="published_date">Published Date</string>
     <string name="hottest_news">Berita Terhangat</string>

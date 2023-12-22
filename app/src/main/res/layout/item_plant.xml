@@ -9,7 +9,7 @@
     android:padding="16dp">
 
     <ImageView
-        android:id="@+id/iv_news_item"
+        android:id="@+id/iv_news_item_recent"
         android:layout_width="75dp"
         android:layout_height="75dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -31,7 +31,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/iv_news_item"
+        app:layout_constraintStart_toEndOf="@+id/iv_news_item_recent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@string/plant_title" />
 

@@ -1,14 +1,12 @@
 package com.dicoding.plantwiseapp.ui.maps
 
-import androidx.fragment.app.Fragment
-
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.fragment.app.Fragment
 import com.dicoding.plantwiseapp.R
-
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -19,6 +17,7 @@ import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
 import java.util.Locale
+
 
 class MapsFragment1 : Fragment(), OnMapReadyCallback {
 
@@ -38,6 +37,9 @@ class MapsFragment1 : Fragment(), OnMapReadyCallback {
 
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment?.getMapAsync(this)
+
+        btnShowPlant = view.findViewById(R.id.btnShowPlant)
+        btnShowPlant.visibility = View.VISIBLE
 
         mapFragment?.getMapAsync{ googleMap ->
             mMap = googleMap
@@ -70,7 +72,7 @@ class MapsFragment1 : Fragment(), OnMapReadyCallback {
         mMap = googleMap
 
         val jakarta = LatLng(-6.2088, 106.8456)
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(jakarta, 10f))
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(jakarta, 5f))
     }
 
     private fun showButton() {

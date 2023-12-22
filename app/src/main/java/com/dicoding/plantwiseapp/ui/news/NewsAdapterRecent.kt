@@ -35,7 +35,7 @@ class NewsAdapterRecent : ListAdapter<DataItem, NewsAdapterRecent.MyViewHolder>(
         fun bind(user: DataItem){
             Glide.with(binding.root.context)
                 .load(user.imageUrl)
-                .into(binding.ivNewsItem)
+                .into(binding.ivNewsItemRecent)
             binding.tvTitleItem.text = user.tittle
             binding.tvDateItem.text = user.updatedAt
         }

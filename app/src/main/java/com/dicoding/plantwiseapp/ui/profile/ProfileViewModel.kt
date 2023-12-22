@@ -4,9 +4,18 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.dicoding.plantwiseapp.database.profiledb.Profile
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class ProfileViewModel(private val profileRepository: ProfileRepository) : ViewModel() {
+
+//    private val viewModelScope = CoroutineScope(Dispatchers.Main)
+    init {
+        viewModelScope.launch {
+            profileRepository.initializeProfileLiveData()
+        }
+    }
 
     fun getProfile(): LiveData<Profile?> {
         return profileRepository.getProfile()
@@ -26,5 +35,8 @@ class ProfileViewModel(private val profileRepository: ProfileRepository) : ViewM
             profile.username = username
             profileRepository.insertProfile(profile)
         }
+    }
+    fun getUsernameFromPrefs(): String {
+        return profileRepository.getUsernameFromPrefs()
     }
 }

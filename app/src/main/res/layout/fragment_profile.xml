@@ -34,7 +34,7 @@
         app:layout_constraintBottom_toBottomOf="@id/imageProfile"
         app:layout_constraintEnd_toEndOf="@id/imageProfile" />
 
-    <TextView
+    <EditText
         android:id="@+id/textUsername"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
